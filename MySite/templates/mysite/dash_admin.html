@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="dashboard">
+    <div class="container">
+        {% if departments %}
+        <h2>Select Department</h2>
+        <form action="" method="post" style="margin-bottom:20px; padding: 10px">
+            {% csrf_token %}
+            <select name="department" style="width:100%; margin-bottom:20px; padding: 10px" required>
+                <option value="">Select Department...</option>
+                {% for dep in departments %}
+                <option value="{{ dep.name }}">{{ dep.name }}</option>
+                {% endfor %}
+            </select>
+            <button type="submit" style="margin: 0% 25%">Submit</button>
+        </form>
+        {% endif %}
+
+        {% if current_dep %}
+        <h2>Select Lecturer</h2>
+        <p>Department: <b>{{ current_dep }}</b></p>
+        <form action="{% url 'MySite:choose_lecturer' %}" method="post" style="margin-bottom:20px; padding: 10px">
+            {% csrf_token %}
+            <select name="lecturer" style="width:100%; margin-bottom:20px; padding: 10px" required>
+                <option value="">Select Lecturer...</option>
+                {% for lecturer in lecturers %}
+                <option value="{{ lecturer.staff_id }}">{{ lecturer.last_name }} {{ lecturer.first_name }}</option>
+                {% endfor %}
+            </select>
+            <button type="submit" style="margin: 0% 25%">Submit</button>
+        </form>
+        {% endif %}
+
+        {% if staff %}
+        <p>Lecturer: <b>{{ staff.last_name }} {{ staff.first_name }}</b></p>
+        <p>Department: <b>{{ staff.department.name }}</b></p>
+        <div class="courses">
+            <h3>Unallocated Courses</h3>
+            <table>
+                <thead>
+                <tr>
+                    <th>Course Title</th>
+                    <th>Course Code</th>
+                    <th>Course Unit</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for course in unalloc_courses %}
+                <tr>
+                    <td>{{ course.title }}</td>
+                    <td>{{ course.code }}</td>
+                    <td>{{ course.unit }}</td>
+                    <td><a href="{% url 'MySite:allocate' course.id staff.staff_id %}">Allocate</a></td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <div class="courses">
+            <h3>Allocated Courses</h3>
+            <table>
+                <thead>
+                <tr>
+                    <th>Course Title</th>
+                    <th>Course Code</th>
+                    <th>Course Unit</th>
+                    <th>Lecturer</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for c in alloc_courses %}
+                <tr>
+                    <td>{{ c.course.title }}</td>
+                    <td>{{ c.course.code }}</td>
+                    <td>{{ c.course.unit }}</td>
+                    <td>{{ c.lecturer.last_name }} {{ c.lecturer.first_name }}</td>
+                    <td><a href="{% url 'MySite:deallocate' c.id staff.staff_id %}">Deallocate</a></td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% endif %}
+
+    </div>
+</section>
+{% endblock content %}

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="dashboard">
+    <div class="container">
+        <h2>Dashboard</h2>
+
+        <div class="courses">
+            <h3>Your Courses</h3>
+            <table>
+                <thead>
+                <tr>
+                    <th>Course Code</th>
+                    <th>Course Title</th>
+                    <th>Course Unit</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for course in courses %}
+                <tr>
+                    <td>{{ course.course.title }}</td>
+                    <td>{{ course.course.code }}</td>
+                    <td>{{ course.course.unit }}</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+{% endblock content %}

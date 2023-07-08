@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <section class="dashboard">
+    <div class="container">
+      <div class="login-form" style="padding: 20px">
+        <h2>Register</h2>
+        {% for msg in messages %}
+        <p>{{ msg }}</p>
+        {% endfor %}
+        <form action="" method="post" style="margin-bottom:20px; padding: 10px">
+          {% csrf_token %}
+          <input type="text" name="last_name" placeholder="Last Name" required>
+          <input type="text" name="first_name" placeholder="First Name" required>
+          <input type="text" name="staff_id" placeholder="Staff Id" required>
+          <input type="email" name="email" placeholder="Email" required>
+          <select name="department" id="" required style="width:100%; margin-bottom:20px; padding: 10px">
+            <option value="">Select Option...</option>
+            {% for dep in departments %}
+            <option value="{{ dep.name }}">{{ dep.name }}</option>
+            {% endfor %}
+          </select><br>
+          <input type="password" name="password" placeholder="Password" required>
+          <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+          <button type="submit" style="margin: 0% 25%">Register</button>
+        </form>
+        <p>Already have an account? <a href="{% url 'MySite:login' %}">Login here</a></p>
+      </div>
+    </div>
+  </section>
+{% endblock content %}

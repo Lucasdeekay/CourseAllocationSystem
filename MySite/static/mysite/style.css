@@ -1,0 +1,456 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+  }
+  
+  header {
+    background-color: #2b4c72;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+  }
+  
+  .logo {
+    margin-right: 10px;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li {
+    display: inline;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    padding: 10px;
+    color: #111111;
+    transition: color 0.3s ease;
+  }
+  
+  nav ul li a:hover {
+    background-color: #2c3e50;
+  }
+  
+  
+  .hero {
+    background-image: url(dummy-hero-image.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .hero-content {
+    text-align: center;
+  }
+  
+  .hero h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .hero p {
+    font-size: 18px;
+    margin: 30px;
+    color: #555;
+  }
+  
+  .btn {
+    display: inline-block;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #555;
+  }
+  
+  .universities {
+    padding: 40px;
+    text-align: center;
+    background-color: #f5f5f5;
+  }
+  
+  .university-card {
+    display: inline-block;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+  
+  .university-card img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .university-card h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .university-card p {
+    font-size: 16px;
+    color: #555;
+  }
+  
+  footer {
+    background-color: #2b4c72;
+    padding: 20px;
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+  }
+  
+  
+  .login-register {
+    background-color: #f5f5f5;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .container {
+    max-width: 200px;
+    width: 40%;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    font-size: 15px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    
+  }
+  
+  form button {
+    display: block;
+    width: 50%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #386ba5;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  form button:hover {
+    background-color: #8b9bf5;
+  }
+  
+  form p {
+    font-size: 14px;
+    margin-top: 20px;
+  }
+  
+  form p a {
+    color: #333;
+  }
+  
+  .toggle-form {
+    color: #333;
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
+  /* Hide the register form initially */
+  .register-form {
+    display: none;
+  }
+  
+
+
+  
+/*FACULTY CSS*/
+
+
+.faculty {
+  background-color: #f5f5f5;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.containers {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+h2 {
+  font-size: 36px;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.faculty-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 30px;
+}
+
+.faculty-card {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.faculty-card img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.faculty-card h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.faculty-card p {
+  font-size: 16px;
+  color: #555;
+}
+
+/*Course CSS*/
+
+.courses {
+  background-color: #f5f5f5;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+h2 {
+  font-size: 36px;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.course-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 30px;
+}
+
+.course-card {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.course-card img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.course-card h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.course-card p {
+  font-size: 16px;
+  color: #555;
+}
+
+
+/*Dashboard CSS*/
+
+.dashboard {
+  background-color: #f5f5f5;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+h2 {
+  font-size: 36px;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.courses, .schedule {
+  margin-bottom: 40px;
+}
+
+.courses h3, .schedule h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.course-list {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+.courses table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.courses th,
+.courses td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.courses th {
+  background-color: #f5f5f5;
+  font-weight: bold;
+}
+
+.courses td {
+  text-align: center;
+}
+
+.courses tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.courses tr:hover {
+  background-color: #ebebeb;
+}
+
+
+.schedule table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.schedule th, .schedule td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.schedule th {
+  background-color: #ddd;
+  font-weight: bold;
+}
+
+.schedule td {
+  text-align: center;
+}
+
+.schedule tr:nth-child(even) td {
+  background-color: #f5f5f5;
+}
+
+/*Faculty lecturers and courses*/
+.faculty {
+  background-color: #f5f5f5;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.containers {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+h2 {
+  font-size: 36px;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.lecturers, .courses {
+  margin-bottom: 40px;
+}
+
+.lecturers h3, .courses h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.lecturer-list, .course-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.lecturer-item, .course-item {
+  width: 200px;
+}
+
+.lecturer-item input[type="checkbox"],
+.course-item input[type="checkbox"] {
+  display: none;
+}
+
+.lecturer-item label,
+.course-item label {
+  display: block;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.lecturer-item label:hover,
+.course-item label:hover {
+  background-color: #f5f5f5;
+}
+
+.lecturer-item input[type="checkbox"]:checked + label,
+.course-item input[type="checkbox"]:checked + label {
+  background-color: #ddd;
+}

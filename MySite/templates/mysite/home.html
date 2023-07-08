@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="hero">
+    <div class="hero-content">
+        <h2>Welcome to Dominion University Ibadan</h2>
+        <p>Course allocation plays a pivotal role in educational institutions, shaping the quality of education and
+            student experience. Our institution understands the significance of a streamlined process for assigning
+            courses to lecturers. With a meticulous approach, we ensure optimal utilization of faculty expertise while
+            considering workload balance, institutional guidelines, and student demand. By prioritizing the best
+            interests of both faculty and students, we strive to deliver a superior learning environment. Discover our
+            commitment to efficient course allocation and empowering educators for academic excellence.</p>
+        <p>Efficient course allocation is vital for educational institutions to provide high-quality education. The
+            process involves assigning courses to lecturers based on their expertise, workload, and institutional
+            requirements. By optimizing this allocation, institutions can enhance teaching standards and student
+            learning experiences. Discover how course allocation benefits both lecturers and students, ensuring
+            effective teaching and academic success.</p>
+        <a href="{% url 'MySite:login' %}" class="btn">Login Now</a>
+    </div>
+</section>
+
+
+{% endblock content %}
