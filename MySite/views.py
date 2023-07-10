@@ -88,7 +88,7 @@ class HomeView(View):
     template_name = "mysite/home.html"
 
     def get(self, request):
-        if Lecturer.objects.filter(user=request.user).exists():
+        if Lecturer.objects.filter(staff_id=request.user.username).exists():
             lecturer = Lecturer.objects.get(user=request.user)
             return render(request, self.template_name, {"lecturer": lecturer})
         elif request.user.is_superuser:
@@ -142,8 +142,9 @@ def choose_lecturer(request):
         alloc_courses = []
         for course in courses:
             if CourseAllocation.objects.filter(**{"course": course, "lecturer": staff}).exists():
-                course = CourseAllocation.objects.get(**{"course": course, "lecturer": staff})
-                alloc_courses.append(course)
+                alloc_course = CourseAllocation.objects.get(**{"course": course, "lecturer": staff})
+                alloc_courses.append(alloc_course)
+
             if not CourseAllocation.objects.filter(course=course).exists():
                 unalloc_courses.append(course)
         return render(request, template_name, {
